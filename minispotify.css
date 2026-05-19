@@ -1,0 +1,82 @@
+/* ═══════════════════ MINI SPOTIFY — CUSTOM STYLES ═══════════════════ */
+
+/* Base */
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: #0d0d0d;
+}
+
+/* ── Scrollbar ────────────────────────────────────── */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1db954;
+    border-radius: 3px;
+}
+
+/* ── Animations ───────────────────────────────────── */
+@keyframes progress {
+    from { width: 0% }
+    to   { width: 100% }
+}
+
+.progress-anim {
+    animation: progress 30s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg) }
+    to   { transform: rotate(360deg) }
+}
+
+.vinyl-spin {
+    animation: spin 4s linear infinite;
+}
+
+.vinyl-spin.paused {
+    animation-play-state: paused;
+}
+
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 10px #1db954; }
+    50%       { box-shadow: 0 0 25px #1db95499; }
+}
+
+.glow {
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.ad-slide {
+    animation: slideDown 0.4s ease;
+}
+
+/* ── Song Table ───────────────────────────────────── */
+.song-row:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.song-row.active {
+    background: rgba(29, 185, 84, 0.12);
+    border-left: 3px solid #1db954;
+}
+
+/* ── Glassmorphism Card ───────────────────────────── */
+.glass {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+}
